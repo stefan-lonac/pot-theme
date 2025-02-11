@@ -1,5 +1,5 @@
 /*!
-Theme Name: pot theme
+Theme Name: Pot Theme DEMO
 Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
@@ -11,15 +11,6 @@ License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: pot-theme
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned.
-
-pot theme is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
 /*--------------------------------------------------------------
@@ -645,11 +636,27 @@ textarea {
 # Components
 --------------------------------------------------------------*/
 
+/* Header
+--------------------------------------------- */
+.site-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+	box-shadow: -1px 5px 5px -1px rgba(101,101,101,0.79);
+	-webkit-box-shadow: -1px 5px 5px -1px rgba(101,101,101,0.79);
+	-moz-box-shadow: -1px 5px 5px -1px rgba(101,101,101,0.79);
+}
+
+.site-header .site-branding img {
+	width: 80px;
+}
+
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
 	display: block;
-	width: 100%;
+	width: auto;
 }
 
 .main-navigation ul {
@@ -711,6 +718,8 @@ textarea {
 
 	.main-navigation ul {
 		display: flex;
+		justify-content: flex-end;
+		gap: 20px;
 	}
 }
 
