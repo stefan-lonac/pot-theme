@@ -1,0 +1,37 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pot-theme/my-block",
+	"version": "0.1.0",
+	"title": "My Text Block",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example block scaffolded with Create Block tool.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"textColor": {
+			"type": "string",
+			"default": "black"
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "gray"
+		},
+		"fontSize": {
+			"type": "string",
+			"default": "16px"
+		},
+		"linkUrl": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "my-block",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
