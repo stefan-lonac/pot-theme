@@ -28,31 +28,40 @@
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'pot-theme'); ?></a>
 
 		<header id="masthead" class="site-header">
+
+
 			<div class="site-branding">
 				<?php
 
-				if (function_exists('the_custom_logo')) :
+				if (function_exists('the_custom_logo')):
 					the_custom_logo();
-				else :
-				?>
-					<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
-				<?php
+				else:
+					?>
+					<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
+					</p>
+					<?php
 				endif;
 				$pot_theme_description = get_bloginfo('description', 'display');
-				if ($pot_theme_description || is_customize_preview()) :
-				?>
+				if ($pot_theme_description || is_customize_preview()):
+					?>
 					<p class="site-description"><?php echo $pot_theme_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
-																			?></p>
+						?></p>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'pot-theme'); ?></button>
+				<button class="menu-toggle" aria-controls="primary-menu"
+					aria-expanded="false"><?php esc_html_e('Primary Menu', 'pot-theme'); ?></button>
 				<?php
 				wp_nav_menu(
 					array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
+						'theme_location' => 'menu-primary',
+						'menu_id' => 'primary-menu',
+						'container' => 'nav',
+						'container_class' => 'main-nav',
+						'menu_class' => 'menu',
+						'link_before' => '',
+						'link_after' => '',
 					)
 				);
 				?>
