@@ -32,9 +32,16 @@
 
 			<div class="site-branding">
 				<?php
+				$image_id = get_option('pt_logo_image');
 
-				if (function_exists('the_custom_logo')):
-					the_custom_logo();
+				if ($image = wp_get_attachment_image_url($image_id, 'medium')):
+					?>
+					<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+						<img src="<?php echo esc_url($image); ?>" alt="<?php bloginfo('name'); ?>" class="custom-logo">
+					</a>
+					<!-- if (function_exists('the_custom_logo')):
+					the_custom_logo(); -->
+					<?php
 				else:
 					?>
 					<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>

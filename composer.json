@@ -1,8 +1,15 @@
 {
-    "name": "stefan-lonac/pot-theme",
-    "type": "wordpress-theme",
-    "require": {
-        "composer/installers": "^2.0"
-    }
-  }
-  
+    "name": "pc/pot-theme",
+    "autoload": {
+        "psr-4": {
+            "PotTheme\\": "inc/"
+        }
+    },
+    "authors": [
+        {
+            "name": "stefan-lonac",
+            "email": "loncaric.stefan@gmail.com"
+        }
+    ],
+    "require": {}
+}

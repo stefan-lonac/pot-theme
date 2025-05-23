@@ -16,7 +16,6 @@ class Theme
     if (self::$instance === null) {
       self::$instance = new self();
       self::$customizer = ThemeCustomizer::get_instance();
-      self::$theme_style = new ThemeStyle();
     }
     return self::$instance;
   }
@@ -35,6 +34,11 @@ class Theme
     // add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
     add_action('after_setup_theme', array(self::$customizer, 'setup'));
     add_action('customize_register', array(self::$customizer, 'register'));
+
+
+    add_action('after_setup_theme', function () {
+      new \PotTheme\Admin\ThemeSettingsPage();
+    });
   }
 
 

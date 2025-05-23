@@ -185,23 +185,12 @@ require get_template_directory() . '/src/blocks/register-blocks.php';
 
 
 
-
-
 /**
- * Theme styling
+ * Core Theme Customizer
  */
-require_once get_template_directory() . '/inc/Styling/ThemeStyle.php';
-
-/**
- * Customizer Include.
- */
-require_once get_template_directory() . '/inc/Customizer/inc.php';
-
-
-/**
- * Core Theme
- */
-require_once get_template_directory() . '/inc/Core/Theme.php';
+require_once get_template_directory() . '/vendor/autoload.php';
+// require_once get_template_directory() . '/inc/Core/Theme.php';
 use PotTheme\Core\Theme;
 
 Theme::getInstance()->init();
+
